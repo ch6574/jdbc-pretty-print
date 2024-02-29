@@ -2,7 +2,7 @@
 Hacky tool for pretty-printing Jdbc ResultSet
 
 # Example
-git clone https://github.com/ch6574/jdbcPrettyPrint.git
+git clone https://github.com/ch6574/jdbc-pretty-print.git
 
 copy the class into your codebase
 
