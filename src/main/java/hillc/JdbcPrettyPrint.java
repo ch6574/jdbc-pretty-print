@@ -1,44 +1,33 @@
 /*******************************************************************************
- * Copyright (C) 2016, Christopher Hill <ch6574@gmail.com>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *******************************************************************************/
+ * Copyright (c) 2016, Christopher Hill <ch6574@gmail.com>
+ * GNU General Public License v3.0+ (see https://www.gnu.org/licenses/gpl-3.0.txt)
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ ******************************************************************************/
 package hillc;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.sql.JDBCType;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
-
 public class JdbcPrettyPrint {
 
     /**
      * Dumps a SQL ResultSet out in a human readable-ish format.
      *
-     * @param rs a JDBC ResultSet
+     * @param rs            a JDBC ResultSet
      * @param maxFieldWidth upper limit on displayed field width
-     * @param maxRowCount upper limit in displayed rows
+     * @param maxRowCount   upper limit in displayed rows
      * @return Given sample input from a query like
      *
      * <pre>
      * SQL> select col1, col789, colx from foo;
      * </pre>
      * <p>
-     *
+     * <p>
      * Formatted output that looks as follows will be returned
      *
      * <pre>
@@ -51,7 +40,7 @@ public class JdbcPrettyPrint {
      * | cccccccc |    12.3 | xxxxxxxxxxxxxxxxxxxx |
      * +----------+---------+----------------------+
      * </pre>
-
+     *
      * <p>
      * Note: Everything is pulled as a String, so formatting isn't always the best.
      */
